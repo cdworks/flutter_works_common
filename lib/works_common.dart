@@ -12,4 +12,18 @@ class WorksCommon {
     final String version = await _channel.invokeMethod('getAssetFilePath',fileName);
     return version;
   }
+
+
+  //播放提示音 ，若不传则播放默认提示音
+  static Future<bool> playSytemSounds({String soundId}) async
+  {
+     return await _channel.invokeMethod('playSytemSounds',soundId ?? '');
+  }
+
+  //milliseconds 震动时间 android有效
+  static Future<bool> vibrate({int milliseconds = 1000}) async
+  {
+    return await _channel.invokeMethod('vibrate',milliseconds);
+  }
+
 }

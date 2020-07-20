@@ -28,6 +28,7 @@
 .pub-cache/
 .pub/
 build/
+.gradle/
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
